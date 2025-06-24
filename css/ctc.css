@@ -1,0 +1,14 @@
+.ctc {
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  #contact {
+    margin-top: -40%;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 100% !important;
+  }
+}

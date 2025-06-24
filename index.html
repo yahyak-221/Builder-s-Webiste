@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astha Group</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/image-carousel.css">
+    <link rel="stylesheet" href="/css/aboutus.css">
+    <link rel="stylesheet" href="/css/vision-mission.css">
+    <link rel="stylesheet" href="/css/projects.css">
+    <link rel="stylesheet" href="/css/ctc.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.4/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <!-- navbar sections starts  -->
+    <header class="header">
+        <div class="logo">
+            <a href="javascript:void(home)" onclick="scrollToSection('home')">
+                <img src="/assets/astha_logo_name.png" alt="Astha-logo" draggable="false">
+            </a>
+        </div>
+        <nav class="navbar">
+            <a href="javascript:void(home)" onclick="scrollToSection('home')">Home</a>
+            <a href="javascript:void(aboutus)" onclick="scrollToSection('aboutus')">About Us</a>
+            <div class="dropdown">
+                <a href="javascript:void(projects)" class="dropbtn">Projects</a>
+                <div class="dropdown-content">
+                    <a href="javascript:void(ongoing)" onclick="scrollToSection('ongoing')">Ongoing</a>
+                    <a href="javascript:void(completed)" onclick="scrollToSection('completed')">Completed</a>
+                    <a href="javascript:void(upcoming)" onclick="scrollToSection('upcoming')">Upcoming</a>
+                </div>
+            </div>
+            <a href="javascript:void(quality)" onclick="scrollToSection('quality')">Quality</a>
+            <a href="javascript:void(contact)" onclick="scrollToSection('contact')">Contact</a>
+        </nav>
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <script>
+
+        </script>
+    </header>
+    <!-- navbar sections ends  -->
+
+
+    <!-- Carousel section -->
+    <section id="home" class="carousel">
+        <div class="carousel-item active" style="background-image: url('./assets/carosuel/stock_image1.jpg');">
+            <div class="carousel-text">
+                <h1>Find Harmony in the City</h1>
+                <p>Creating Spaces for Relaxation and Connection</p>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('./assets/carosuel/stock_image2.jpg');">
+            <div class="carousel-text">
+                <h1>Dive into Leisure and Community</h1>
+                <p>Creating Cherished Moments Under the Sun</p>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('./assets/carosuel/stock_image3.jpg');">
+            <div class="carousel-text">
+                <h1>Urban Harmony: Nature Meets Architecture</h1>
+                <p>Redefining Urban Living Through Nature</p>
+            </div>
+        </div>
+        <div class="carousel-item" style="background-image: url('./assets/carosuel/stock_image4.jpg');">
+            <div class="carousel-text">
+                <h1>Finding Peace in the City's Embrace</h1>
+                <p>Where Every Dialogue Unfolds with a View</p>
+            </div>
+        </div>
+
+        <!-- JavaScript to enable carousel -->
+        <script>
+            let currentIndex = 0;
+            const items = document.querySelectorAll('.carousel-item');
+
+            function showNextSlide() {
+                items[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % items.length;
+                items[currentIndex].classList.add('active');
+            }
+
+            setInterval(showNextSlide, 5000); // Change image every 5 seconds
+        </script>
+    </section>
+    <!-- Carousel section ends -->
+
+
+    <!-- About Us -->
+    <section data-aos="fade-down" id="aboutus" class="aboutus">
+        <div class="aboutus-txt">
+            <h1>About Us</h1>
+            <p>
+                At Astha Group, we believe that life becomes simpler when your home is built to fit your needs
+                perfectly. With a passion for crafting spaces that reflect comfort, elegance, and functionality,
+                we aim to turn your dream home into reality. From modern architecture to seamless execution,
+                we ensure every step of construction is backed by quality and expertise.
+                <br><br>
+            </p>
+            <br><br>
+
+            <h1 id="quality">Quality</h1>
+            <p>
+                For 20 years, we've built more than just structures. We've built trust and a deep sense of belonging. We
+                believe that life feels effortless when your home is crafted to be a reflection of you. We pour our
+                heart
+                into every project, ensuring each detail is designed with care and every corner built with comfort in
+                mind.
+                Because at Astha, we don't just build homes. We craft the foundations for your most cherished memories,
+                the
+                ones that make life richer and more meaningful.
+                <br><br>
+                Let us make your home, your place where living feels easy, every day.
+            </p>
+        </div>
+        <div class="aboutus-txt-img">
+            <img src="/assets/astha_logo.png" alt="">
+        </div>
+    </section>
+    <!-- About Us Ends -->
+
+    <br><br>
+    <br><br>
+
+    <!-- Vision mission values -->
+    <section class="vision-mission">
+        <div class="data">
+            <div data-aos="fade-down" class="vision">
+                <h1>Vision</h1>
+                <p>
+                    To simplify living by crafting homes that blend comfort, functionality, and elegance.
+                </p>
+            </div>
+            <br><br>
+            <div data-aos="fade-down" class="mission">
+                <h1>Mission</h1>
+                <p>
+                    To build trust and belonging through thoughtfully designed homes that reflect the needs and
+                    lifestyles
+                    of our clients.
+                </p>
+            </div>
+            <br><br>
+            <div data-aos="fade-up" class="values">
+                <h1>Values</h1>
+                <p>
+                    <!--  -->
+                    <strong>Comfort & Functionality <br></strong>
+                    Designing homes that prioritize everyday ease and practicality.
+                    <!--  -->
+                    <!--  -->
+                    <!--  --> <br> <!--  -->
+                    <!--  --> <br> <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <strong>Trust & Integrity <br></strong>
+                    Building lasting relationships through honesty and reliability.
+                    <!--  -->
+                    <!--  -->
+                    <!--  --> <br> <!--  -->
+                    <!--  --> <br> <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <strong>Innovation in Design <br></strong>
+                    Blending modern architecture with timeless elegance for enduring appeal.
+                    <!--  -->
+                </p>
+            </div>
+        </div>
+        <div class="data-img">
+            <img src="/assets/aboutus-visionmission/values.jpg" alt="">
+        </div>
+    </section>
+    <!-- Vision mission values Ends -->
+
+
+    <!-- Ongoing Projects -->
+    <section id="ongoing">
+        <div class="projects-gallery">
+            <h1 data-aos="fade-up">Ongoing Projects</h1>
+            <div class="projects-grid-ongoing">
+                <div class="project-card-1" data-aos="fade-down">
+                    <img src="./assets/projects/AsthaAvana.jpg" alt="Astha Avana Project Image" class="project-img">
+                    <div class="project-info">
+                        <h3>Astha Avana</h3>
+                        <p>Ulwe, Navi Mumbai</p>
+                    </div>
+                </div>
+                <div class="project-card-2" data-aos="fade-down">
+                    <img src="./assets/projects/Sai Bhakti.jpg" alt="Sai Bhakti Project Image" class="project-img">
+                    <div class="project-info">
+                        <h3>Sai Bhakti</h3>
+                        <p>Ulwe, Navi Mumbai</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ongoing Projects End -->
+
+
+    <!-- Completed Projects -->
+    <section id="completed" class="projects-gallery">
+        <h1 data-aos="fade-up">Our Projects</h1>
+        <div class="projects-grid">
+            <div class="project-card" data-aos="fade-down">
+                <img src="./assets/projects/Astha Anand.jpg" alt="Project 2" class="project-img">
+                <div class="project-info">
+                    <h3>Astha Anand</h3>
+                    <p>Ulwe, Navi Mumbai</p>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-down">
+                <img src="./assets/projects/Astha Avenue.jpg" alt="Project 3" class="project-img">
+                <div class="project-info">
+                    <h3>Astha Avenue</h3>
+                    <p>Ulwe, Navi Mumbai</p>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-down">
+                <img src="./assets/projects/Astha Enclave.jpg" alt="Project 4" class="project-img">
+                <div class="project-info">
+                    <h3>Astha Enclave</h3>
+                    <p>Ulwe, Navi Mumbai</p>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-down">
+                <img src="./assets/projects/Astha Ratna.jpg" alt="Project 4" class="project-img">
+                <div class="project-info">
+                    <h3>Astha Ratna</h3>
+                    <p>Ulwe, Navi Mumbai</p>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-down">
+                <img src="./assets/projects/Divya Shrushti.jpg" alt="Project 4" class="project-img">
+                <div class="project-info">
+                    <h3>Divya Shrushti</h3>
+                    <p>Ulwe, Navi Mumbai</p>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-down">
+                <img src="./assets/projects/Astha Niwas.jpg" alt="Project 4" class="project-img">
+                <div class="project-info">
+                    <h3>Astha Niwas</h3>
+                    <p>Ulwe, Navi Mumbai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Completed Projects Ends -->
+
+
+    <!-- Upcoming Projects -->
+    <section id="upcoming">
+        <section class="projects-gallery">
+            <h1 data-aos="fade-up">Upcoming Projects</h1>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-down">
+                    <img src="./assets/projects/VijayNagari.jpg" alt="Project 2" class="project-img">
+                    <div class="project-info">
+                        <h3>Vijay Nagari</h3>
+                        <p>Ghodbunder Road, Thane</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Upcoming Projects End -->
+
+
+    <!-- Contact Form -->
+    <div id="contact">
+        <div class="flex items-center min-h-screen">
+            <div class="container mx-auto">
+                <div class="max-w-3xl mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+                    <div class="text-center">
+                        <h1 class="my-3 ctc font-semibold text-gray-700 dark:text-gray-200">
+                            Contact Us
+                        </h1>
+                        <p class="text-gray-400 dark:text-gray-400">
+                            Fill up the form below to send us a message.
+                        </p>
+                    </div>
+                    <div class="m-7">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                            <input type="hidden" name="access_key" value="c62fc1d5-54fb-4362-8a47-2a3211555574" />
+                            <input type="hidden" name="subject" value="New From Details" />
+                            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
+                            <div class="flex mb-6 space-x-4">
+                                <div class="w-full md:w-1/2">
+                                    <label for="fname"
+                                        class="block mb-2 text-2xl text-gray-600 dark:text-gray-400">First
+                                        Name</label>
+                                    <input type="text" name="name" id="first_name" required
+                                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                                </div>
+                                <div class="w-full md:w-1/2">
+                                    <label for="lname" class="block mb-2 text-2xl text-gray-600 dark:text-gray-400">Last
+                                        Name</label>
+                                    <input type="text" name="last_name" id="lname" required
+                                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                                </div>
+                            </div>
+
+                            <div class="flex mb-6 space-x-4">
+                                <div class="w-full md:w-1/2">
+                                    <label for="email"
+                                        class="block mb-2 text-2xl text-gray-600 dark:text-gray-400">Email
+                                        Address</label>
+                                    <input type="email" name="email" id="email" required
+                                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                                </div>
+
+                                <div class="w-full md:w-1/2">
+                                    <label for="phone"
+                                        class="block text-2xl mb-2 text-gray-600 dark:text-gray-400">Phone
+                                        Number</label>
+                                    <input type="text" name="phone" id="phone" required
+                                        class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block mb-2 text-2xl text-gray-600 dark:text-gray-400">Your
+                                    Message</label>
+
+                                <textarea rows="5" name="message" id="message" placeholder="Your Message"
+                                    class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                                    required></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <button type="submit"
+                                    class="w-full px-3 py-4 text-3xl text-white rounded-md focus:bg-indigo-600 focus:outline-none"
+                                    style="background-color: #a61d21;">
+                                    Send Message
+                                </button>
+                            </div>
+                            <p class="text-base text-center text-gray-400" id="result"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Form End -->
+
+
+    <!-- Footer -->
+    <footer>
+        <section class="footer" id="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Contact info</h3>
+                    <a href="tel:+91-9821506143"><i class="fas fa-phone"></i>+91-9821506143</a>
+                    <a href="tel:+91-8655143477"><i class="fas fa-phone"></i>+91-8655143477</a>
+                    <a href="mailto:asthagroup.org@gmail.com"><i
+                            class="fas fa-envelope"></i>asthagroup.org@gmail.com</a>
+                    <a href="https://maps.app.goo.gl/cFsmZ8cXKc79gVyN8" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+                <div class="box">
+                    <h3>Quick links</h3>
+                    <a href="javascript:void(quicklink-home)" onclick="scrollToSection('home')">
+                        <i class="fas fa-chevron-right"></i>
+                        Home
+                    </a>
+                    <a href="javascript:void(quicklink-aboutus)" onclick="scrollToSection('aboutus')">
+                        <i class="fas fa-chevron-right"></i>
+                        About Us
+                    </a>
+                    <a href="javascript:void(quicklink-projects)" onclick="scrollToSection('ongoing')">
+                        <i class="fas fa-chevron-right"></i>
+                        Projects
+                    </a>
+                    <a href="javascript:void(quicklink-quality)" onclick="scrollToSection('quality')">
+                        <i class="fas fa-chevron-right"></i>
+                        Quality
+                    </a>
+                    <a href="javascript:void(quicklink-contact)" onclick="scrollToSection('contact')">
+                        <i class="fas fa-chevron-right"></i>
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- Footer Ends -->
+
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/scrolling.js"></script>
+<script src="/js/contact-form.js"></script>
+
+</html>
