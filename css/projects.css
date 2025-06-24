@@ -1,0 +1,110 @@
+/* Reuse the general grid and card styles */
+.projects-gallery {
+  background-color: #fdfcf7;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.projects-gallery h1 {
+  margin-bottom: 40px;
+  font-size: 3rem;
+  color: #1f1f1f;
+}
+/* Common styles for projects grids */
+.projects-grid,
+.projects-grid-ongoing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.projects-grid-ongoing {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  width: 55%;
+}
+
+.project-card,
+.project-card-1,
+.project-card-2 {
+  border-radius: 5px;
+  border: 0.7px solid #1f1f1f38;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 14px 20px #1f1f1f38;
+  transition: transform 0.5s;
+}
+
+.project-card:hover,
+.project-card-1:hover,
+.project-card-2:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.01);
+}
+
+.project-info {
+  padding: 5px;
+  line-height: 17px;
+  background-color: #fff;
+  border-top: 1px solid #fff;
+}
+
+.project-info h3 {
+  margin: 5px 0;
+  font-size: 1.25rem;
+  color: #1f1f1f;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-info h3,
+.project-card-1:hover .project-info h3,
+.project-card-2:hover .project-info h3 {
+  color: #333;
+}
+
+@media (max-width: 4000px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  }
+}
+@media (max-width: 2160px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(410px, 1fr));
+  }
+}
+@media (max-width: 1800px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid-ongoing {
+    width: 100%;
+  }
+  .projects-grid,
+  .projects-grid-ongoing {
+    grid-template-columns: 1fr;
+  }
+  .project-info {
+    line-height: 10px;
+  }
+}

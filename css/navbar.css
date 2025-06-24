@@ -1,0 +1,212 @@
+/* navbar sections starts */
+.header {
+  width: 100vw;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: #ffffff; /* Default font color */
+  box-shadow: none;
+}
+
+.header.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header.glass-effect .navbar a {
+  color: #1f1f1f; /* Change font color for links */
+}
+
+.header .logo {
+  cursor: pointer;
+}
+
+.header .logo img {
+  width: 200px;
+  height: auto;
+  user-select: none !important;
+  transition: content 0.3s ease-in-out;
+}
+
+.header.glass-effect .logo img {
+  content: url("/assets/astha_logo_name_red.png");
+}
+
+.header .navbar a {
+  color: #ffffff;
+  margin-left: 2rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+.header .navbar a:hover {
+  color: var(--Soft-Red);
+}
+
+.header .navbar .btn {
+  padding: 0.6rem 3rem;
+  background-color: var(--Soft-Red);
+  color: #fff;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.header .navbar .btn:hover {
+  color: var(--Soft-Red);
+  background-color: transparent;
+  border: 2px solid var(--Soft-Red);
+}
+
+#menu-btn {
+  padding: 1rem 1rem;
+  font-size: 3rem;
+  color: var(--Soft-Red);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu-btn:hover {
+  transform: rotate(90deg); /* Rotate the hamburger menu icon */
+}
+
+/* Media Queries */
+@media (max-width: 1100px) {
+  .header {
+    padding: 2.5rem 5%;
+  }
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: initial;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    box-shadow: var(--box-shadow);
+    width: 33rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--Soft-Red);
+    background-color: #fff;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header .navbar.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .header .navbar a {
+    color: #1f1f1f;
+
+    margin: 2.5rem;
+    text-align: center;
+    display: block;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+.header.glass-effect {
+  animation: fadeIn 0.5s ease-in-out;
+}
+/* navbar sections ends */
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin-left: 2rem;
+  transition: color 0.3s ease; /* Add smooth color transition */
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: var(--box-shadow);
+  z-index: 1;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transform: translateY(-20px); /* Add small downward movement */
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+}
+
+.dropdown-content a {
+  color: #1f1f1f;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 1rem;
+  text-transform: none;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Smooth fade-in and fade-out */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0); /* Smoothly move into place */
+  visibility: visible;
+}
+
+.dropdown:not(:hover) .dropdown-content {
+  opacity: 0;
+  transform: translateY(-20px); /* Move back up */
+  visibility: hidden;
+}
+
+.dropdown:hover .dropbtn {
+  color: var(--Soft-Red);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
