@@ -38,7 +38,7 @@
 }
 
 .header.glass-effect .logo img {
-  content: url("/assets/astha_logo_name_red.png");
+  content: url("./assets/astha_logo_name_red.png");
 }
 
 .header .navbar a {
